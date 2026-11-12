@@ -181,9 +181,10 @@ section { padding: clamp(64px, 9vw, 120px) clamp(16px, 6vw, 88px); }
 .today-label { font: 14px var(--brush); color: var(--soft); letter-spacing: .3em; }
 .today-term { font: 700 32px/1.5 var(--brush); color: var(--red); letter-spacing: .1em; }
 .today-tip { font: 17px var(--brush); }
-.wheel { display: flex; gap: 7px; overflow-x: auto; padding: 8px 4px 18px; max-width: 1100px; margin: 0 auto; scrollbar-width: thin; scroll-snap-type: x proximity; }
+.wheel { display: flex; align-items: flex-start; gap: 7px; overflow-x: auto; padding: 8px 4px 18px; max-width: 1100px; margin: 0 auto; scrollbar-width: thin; scroll-snap-type: x proximity; }
 .wheel button {
-  flex: 1 0 36px; writing-mode: vertical-rl; padding: 16px 0 14px; border-radius: 1px; cursor: pointer; scroll-snap-align: center;
+  flex: 1 0 36px; height: 104px; padding: 0 0 14px; position: relative; display: flex; align-items: center; justify-content: center;
+  writing-mode: vertical-rl; border-radius: 1px; cursor: pointer; scroll-snap-align: center;
   font: 17px var(--brush); letter-spacing: .35em; background: var(--paper2); color: #7d7468; border: 1px solid var(--line); border-top: 3px solid transparent; transition: transform .25s, background .25s, color .25s;
 }
 .wheel button:hover { transform: translateY(-4px); color: var(--ink); }
@@ -191,7 +192,7 @@ section { padding: clamp(64px, 9vw, 120px) clamp(16px, 6vw, 88px); }
 .wheel button[data-season="夏"] { border-top-color: var(--summer); }
 .wheel button[data-season="秋"] { border-top-color: var(--autumn); }
 .wheel button[data-season="冬"] { border-top-color: var(--winter); }
-.wheel button.today::after { content: "今"; display: block; writing-mode: horizontal-tb; margin-top: 6px; font-size: 12px; color: var(--red); letter-spacing: 0; }
+.wheel button.today::after { content: "今"; position: absolute; left: 0; right: 0; bottom: 5px; writing-mode: horizontal-tb; text-align: center; font-size: 12px; line-height: 1; color: var(--red); letter-spacing: 0; }
 .wheel button[aria-selected="true"] { background: var(--red); color: #fbefe6; border-color: var(--red); }
 .wheel button[aria-selected="true"].today::after { color: #fbefe6; }
 .term-card { max-width: 940px; margin: 22px auto 0; display: grid; grid-template-columns: 1fr 1.1fr; background: var(--paper2); border: 1px solid var(--line); padding: 12px; box-shadow: var(--shadow); text-align: left; position: relative; }
