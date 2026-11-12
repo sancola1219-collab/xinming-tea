@@ -159,7 +159,16 @@ const setMusic = on => {
   if (on) { bgm.volume = 0; bgm.play().then(() => ramp(.55)).catch(() => setMusic(false)); }
   else ramp(0, () => bgm.pause());
 };
-mbtn.onclick = () => setMusic(bgm.paused || !mbtn.classList.contains('on'));
+let musicTouched = false;   // 访客自己按过音乐钮之后，就不再自动开
+mbtn.onclick = e => { e.stopPropagation(); musicTouched = true; setMusic(bgm.paused || !mbtn.classList.contains('on')); };
+const autoStart = () => {
+  ['pointerdown', 'keydown', 'touchend'].forEach(ev => removeEventListener(ev, autoStart, true));
+  if (!musicTouched && bgm.paused) setMusic(true);
+};
+['pointerdown', 'keydown', 'touchend'].forEach(ev => addEventListener(ev, autoStart, true));
+mbtn.addEventListener('pointerdown', e => { musicTouched = true; }, true);
+bgm.volume = 0;
+bgm.play().then(() => { if (!musicTouched) { mbtn.classList.add('on'); mbtn.setAttribute('aria-pressed', true); mbtn.querySelector('.mtxt').textContent = '播放中'; ramp(.55); } }).catch(() => {});
 
 // 水墨山岚：往下卷时山一层层移动（视差）
 const inkLayers = [...document.querySelectorAll('.ml[data-k]')];
