@@ -76,6 +76,20 @@ section { padding: clamp(56px, 8vw, 100px) clamp(16px, 6vw, 88px); }
 .today-tip { font: 18px var(--brush); }
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 
+
+/* 关于昕茗 */
+.about-wrap { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(28px, 6vw, 80px); align-items: center; }
+.about-photo { margin: 0; position: relative; }
+.about-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; border-radius: 220px 220px 20px 20px; box-shadow: var(--shadow); }
+.about-text h2 { font: 700 clamp(40px, 5vw, 58px)/1.2 var(--brush); margin: 4px 0; }
+.about-poem { font: 22px var(--brush); color: var(--red); margin: 0 0 14px; }
+.about-text p { margin: 0 0 12px; }
+.about-pics { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+.about-pics img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; box-shadow: var(--shadow); }
+.about-pics img:last-child { object-position: 50% 30%; }
+.ink-band img { max-height: 560px; object-fit: cover; }
+.p1 img { object-position: 50% 25%; }
+
 /* 節氣輪 */
 .calendar { background: linear-gradient(transparent, rgba(255, 255, 255, .55) 20%, rgba(255, 255, 255, .55) 80%, transparent); }
 .wheel { display: flex; gap: 8px; overflow-x: auto; padding: 8px 4px 18px; max-width: 1180px; margin: 0 auto; scrollbar-width: thin; scroll-snap-type: x proximity; }
@@ -237,6 +251,8 @@ section { padding: clamp(56px, 8vw, 100px) clamp(16px, 6vw, 88px); }
   .ink-scene { height: 78vh; min-height: 480px; }
   .ink-title { right: 8%; top: 18%; }
   .ink-band { grid-template-columns: 1fr; }
+  .about-wrap { grid-template-columns: 1fr; }
+  .about-photo img { aspect-ratio: 3 / 4; }
   .ink-strip { grid-template-columns: 1fr; }
   .ink-strip img { height: 220px; }
   .book { grid-template-columns: 1fr; }

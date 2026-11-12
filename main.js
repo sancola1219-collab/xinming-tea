@@ -1,5 +1,5 @@
 // ===== 二十四节气资料（日期为大约日期，每年前后差一两天） =====
-const SEASON_IMG = { 春: 'img/maofeng-leaves.jpg', 夏: 'img/gaiwan-red.jpg', 秋: 'img/gaiwan-leaves.jpg', 冬: 'img/red-kettle.jpg' };
+const SEASON_IMG = { 春: 'img/maofeng-leaves.jpg', 夏: 'img/round-table.jpg', 秋: 'img/copper-scoop.jpg', 冬: 'img/kettle-stove.jpg' };
 const TERMS = [
   ['立春', 2, 4, '春', '东风解冻，万物抬头。', '红茶', '开春第一泡，给自己一个好兆头。'],
   ['雨水', 2, 19, '春', '雨落无声，草色遥看。', '红茶', '天还湿冷，红茶暖手，一杯一杯慢慢喝。'],
