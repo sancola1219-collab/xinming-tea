@@ -1,14 +1,14 @@
 // ===== 二十四节气资料（日期为大约日期，每年前后差一两天） =====
-// 每个节气配一张照片：[档名, 取景位置]。照片不够 24 张，重复用的会换取景位置，相邻节气不会同一张。
+// 每个节气配一张照片：[档名, 取景位置]，24 张都不一样。
 const TERM_IMG = {
-  立春: ['gaiwan-red', '50% 50%'], 雨水: ['hand-pitcher', '50% 50%'], 惊蛰: ['pour', '50% 50%'], 春分: ['tea-table', '50% 50%'],
-  清明: ['maofeng-leaves', '50% 50%'], 谷雨: ['topview', '50% 50%'],
-  立夏: ['round-table', '50% 50%'], 小满: ['gourd', '50% 30%'], 芒种: ['hand-pitcher', '85% 50%'], 夏至: ['tea-table', '20% 80%'],
-  小暑: ['maofeng-leaves', '15% 20%'], 大暑: ['pour', '20% 80%'],
-  立秋: ['copper-scoop', '50% 60%'], 处暑: ['rougui-cup', '50% 40%'], 白露: ['topview', '85% 80%'], 秋分: ['forest', '50% 25%'],
-  寒露: ['gaiwan-red', '85% 80%'], 霜降: ['round-table', '15% 30%'],
-  立冬: ['kettle-stove', '50% 50%'], 小雪: ['liubao-leaves', '50% 50%'], 大雪: ['steam-kettle', '50% 55%'], 冬至: ['gourd', '50% 90%'],
-  小寒: ['copper-scoop', '50% 15%'], 大寒: ['portrait', '50% 30%'],
+  立春: ['gaiwan-red', '50% 50%'], 雨水: ['hand-pitcher', '50% 50%'], 惊蛰: ['pine-saucer', '50% 50%'], 春分: ['tea-table', '50% 50%'],
+  清明: ['maofeng-leaves', '50% 50%'], 谷雨: ['poem-cup', '50% 50%'],
+  立夏: ['tieguanyin', '50% 50%'], 小满: ['round-table', '50% 50%'], 芒种: ['pour', '50% 50%'], 夏至: ['sky-pitcher', '50% 55%'],
+  小暑: ['gourd', '50% 30%'], 大暑: ['topview', '50% 50%'],
+  立秋: ['rougui-leaves', '50% 50%'], 处暑: ['rougui-cup', '50% 40%'], 白露: ['zisha-pot', '50% 55%'], 秋分: ['osmanthus', '50% 35%'],
+  寒露: ['vase', '50% 45%'], 霜降: ['copper-scoop', '50% 60%'],
+  立冬: ['kettle-stove', '50% 50%'], 小雪: ['liubao-leaves', '50% 50%'], 大雪: ['steam-kettle', '50% 55%'], 冬至: ['incense-table', '50% 50%'],
+  小寒: ['tea-ball', '50% 50%'], 大寒: ['whitetea-leaves', '50% 50%'],
 };
 const TERMS = [
   ['立春', 2, 4, '春', '东风解冻，万物抬头。', '红茶', '开春第一泡，给自己一个好兆头。'],
