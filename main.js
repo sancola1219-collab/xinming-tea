@@ -144,7 +144,7 @@ const ramp = (to, done) => {
 const setMusic = on => {
   mbtn.classList.toggle('on', on);
   mbtn.setAttribute('aria-pressed', on);
-  mbtn.querySelector('.mtxt').textContent = on ? '琴音' : '听琴';
+  mbtn.querySelector('.mtxt').textContent = on ? '播放中' : '音乐';
   if (on) { bgm.volume = 0; bgm.play().then(() => ramp(.55)).catch(() => setMusic(false)); }
   else ramp(0, () => bgm.pause());
 };
