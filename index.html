@@ -12,13 +12,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="style.css?v=17">
+<link rel="stylesheet" href="style.css?v=18">
 </head>
 <body>
 
 <header class="nav">
   <a class="brand" href="#top"><span class="seal">昕茗</span><span>一盏茶，一段光阴</span></a>
   <nav>
+    <a href="#film">影片</a>
     <a href="#about">关于我</a>
     <a href="#moments">日常</a>
     <a href="#likes">喜欢</a>
@@ -44,9 +45,19 @@
     </div>
     <p class="me-line">喜欢落叶、竹影、一炉香，<br>和一杯慢慢泡开的茶。</p>
     <div class="hero-cta">
-      <a class="btn btn-red" href="#about">认识我</a>
+      <a class="btn btn-red" href="#film">看影片</a>
+      <a class="btn btn-line" href="#about">认识我</a>
       <a class="btn btn-line" href="#visit">约我喝茶</a>
     </div>
+  </div>
+</section>
+
+<!-- 影片 -->
+<section class="film" id="film">
+  <p class="kicker">一分钟 · 认识我</p>
+  <div class="film-frame reveal">
+    <video id="intro" src="video/xinming-intro-web.mp4" poster="video/poster.jpg" controls playsinline muted autoplay preload="metadata"></video>
+    <button class="film-sound" id="film-sound" type="button">点一下，开声音</button>
   </div>
 </section>
 
@@ -218,6 +229,6 @@ const CONTACT = {
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.js" defer></script>
-<script src="main.js?v=17" defer></script>
+<script src="main.js?v=18" defer></script>
 </body>
 </html>

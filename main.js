@@ -161,7 +161,8 @@ const setMusic = on => {
 };
 let musicTouched = false;   // 访客自己按过音乐钮之后，就不再自动开
 mbtn.onclick = e => { e.stopPropagation(); musicTouched = true; setMusic(bgm.paused || !mbtn.classList.contains('on')); };
-const autoStart = () => {
+const autoStart = e => {
+  if (e && e.target && e.target.closest && e.target.closest('.film-frame')) return;   // 点影片不开背景乐
   ['pointerdown', 'keydown', 'touchend'].forEach(ev => removeEventListener(ev, autoStart, true));
   if (!musicTouched && bgm.paused) setMusic(true);
 };
@@ -186,3 +187,10 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   addEventListener('scroll', () => { if (!inkTick) { inkTick = true; requestAnimationFrame(inkMove); } }, { passive: true });
   inkMove();
 }
+
+// 个人介绍影片：进站静音自动播；开了声音就把背景乐停掉，两个不会叠在一起
+const intro = $('intro'), fsound = $('film-sound');
+const introLoud = () => { musicTouched = true; if (!bgm.paused) setMusic(false); fsound.hidden = true; };
+fsound.onclick = () => { intro.muted = false; intro.currentTime = 0; intro.play(); introLoud(); };
+intro.addEventListener('volumechange', () => { if (!intro.muted && intro.volume > 0) introLoud(); });
+intro.addEventListener('play', () => { if (!intro.muted) introLoud(); });
