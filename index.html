@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>昕茗的节气茶历｜二十四节气，二十四杯茶</title>
-<meta name="description" content="昕茗的茶舍。跟着二十四节气喝茶：今天该泡什么茶、配什么心情。">
-<meta property="og:title" content="昕茗的节气茶历">
+<title>昕茗｜一盏茶，一段光阴</title>
+<meta name="description" content="我是昕茗，喜欢落叶、竹影、一炉香，和一杯慢慢泡开的茶。">
+<meta property="og:title" content="昕茗｜一盏茶，一段光阴">
 <meta property="og:description" content="二十四节气，二十四杯茶。岁月藏在茶汤里，晚风落在竹檐下。">
 <meta property="og:image" content="img/forest.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,64 +17,143 @@
 <body>
 
 <header class="nav">
-  <a class="brand" href="#top"><span class="seal">昕茗</span><span>节气茶历</span></a>
+  <a class="brand" href="#top"><span class="seal">昕茗</span><span>一盏茶，一段光阴</span></a>
   <nav>
-    <a href="#about">关于</a>
-    <a href="#calendar">茶历</a>
-    <a href="#seasons">四季</a>
-    <a href="#mountain">山岚</a>
-    <a href="#teas">茶单</a>
-    <a href="#moments">日记</a>
-    <a href="#visit">约茶</a>
+    <a href="#about">关于我</a>
+    <a href="#moments">日常</a>
+    <a href="#likes">喜欢</a>
+    <a href="#mountain">光影</a>
+    <a href="#tea">茶</a>
+    <a href="#visit">约我</a>
   </nav>
   <button class="music" id="music" type="button" aria-label="播放背景音乐" aria-pressed="false"><span class="note">♪</span><span class="bars"><i></i><i></i><i></i></span><span class="mtxt">听琴</span></button>
   <button class="lang" id="lang" type="button" aria-label="切换简体/繁体">繁</button>
 </header>
 
-<!-- 首屏 -->
-<section class="hero" id="top">
-  <div class="hero-photo reveal">
-    <img src="img/portrait.jpg" alt="昕茗手捧红色茶盏的水彩画像">
-    <span class="hero-seal">昕茗</span>
+<!-- 首屏：她本人 -->
+<section class="me-hero" id="top">
+  <div class="me-photo">
+    <img src="img/forest.jpg" alt="昕茗坐在秋天的白桦林里，托着腮微笑">
   </div>
-  <div class="hero-text reveal">
-    <p class="kicker">昕茗 · 茶舍</p>
-    <h1>昕茗的<br>节气茶历</h1>
-    <p class="hero-sub">二十四个节气，二十四杯茶。</p>
-    <div class="today" id="today">
-      <span class="today-label">今日节气</span>
-      <span class="today-term" data-term-name>立冬</span>
-      <span class="today-tip" data-term-tip>宜煮老茶、围炉、慢慢聊。</span>
-    </div>
+  <div class="me-text">
+    <p class="kicker">Hi，我是</p>
+    <h1 class="me-name">昕茗</h1>
+    <p class="me-line">喜欢落叶、竹影、一炉香，<br>和一杯慢慢泡开的茶。</p>
+    <p class="me-poem"><span>岁月藏在茶汤里</span><span>晚风落在竹檐下</span></p>
     <div class="hero-cta">
-      <a class="btn btn-red" href="#calendar">翻开茶历</a>
-      <a class="btn btn-line" href="#visit">约一席茶</a>
+      <a class="btn btn-red" href="#about">认识我</a>
+      <a class="btn btn-line" href="#visit">约我喝茶</a>
     </div>
   </div>
 </section>
 
-<!-- 关于昕茗 -->
+<!-- 关于我 -->
 <section class="about" id="about">
   <div class="about-wrap">
-    <figure class="about-photo reveal"><img src="img/forest.jpg" alt="昕茗坐在秋天的白桦林里" loading="lazy"></figure>
+    <figure class="about-photo reveal"><img src="img/portrait.jpg" alt="昕茗手捧红色茶盏的水彩画像" loading="lazy"></figure>
     <div class="about-text reveal">
-      <p class="kicker">序 · 关于我</p>
-      <h2>我是昕茗</h2>
+      <p class="kicker">壹 · 关于我</p>
+      <h2>慢一点，也没关系</h2>
       <p class="about-poem">一盏茶，一段光阴。</p>
-      <p>喜欢秋天的落叶、竹影下的光，也喜欢在有阳光的午后，温杯、注水、出汤，看卷起的茶叶一片片醒过来。</p>
-      <p>围炉烤几颗栗子，煮一壶老茶，日子就慢下来了。我把喜欢的茶和这些小日子放在这里，留给同样愿意慢下来的你。</p>
-      <div class="about-pics">
-        <img src="img/topview.jpg" alt="盖碗、炭炉与公道杯的茶席" loading="lazy">
-        <img src="img/gourd.jpg" alt="竹枝下挂着葫芦，桌上红色盖碗" loading="lazy">
-      </div>
+      <p>我是昕茗。喜欢秋天踩在落叶上的声音，喜欢午后的阳光斜斜地照进茶汤里，也喜欢收集一些旧旧的、有温度的小东西。</p>
+      <p>开一间小小的茶舍，不是为了卖多少茶，是想要有一个地方，可以让来的人坐下来、喘口气。茶我来泡，你只要带着故事来就好。</p>
+      <ul class="me-tags">
+        <li>🍂 落叶控</li><li>🎋 竹影收集者</li><li>🧶 钩织杯垫</li><li>📷 爱拍光影</li><li>🍵 每天三泡茶</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- 茶历：二十四节气 -->
-<section class="calendar" id="calendar">
-  <h2 class="title reveal"><small>壹</small>二十四节气茶历</h2>
-  <p class="note reveal">点一个节气，看看那时候我会泡什么茶。</p>
+<!-- 日常（手帐） -->
+<section class="moments" id="moments">
+  <h2 class="title reveal"><small>贰</small>昕茗的日常手帐</h2>
+  <p class="note reveal">今天去了哪里、看到什么光、泡了什么茶，都记在这里。</p>
+  <div class="book reveal">
+    <div class="page page-l">
+      <p class="d-date">立冬 · 晴 · 微风</p>
+      <h3 class="d-title">今天也好好生活了</h3>
+      <figure class="polaroid p1"><i class="tape"></i><img src="img/forest.jpg" alt="昕茗在白桦林里" loading="lazy"><figcaption>去看了白桦林</figcaption></figure>
+      <div class="entry">
+        <p class="e-head"><b>清晨</b>开店前的第一泡</p>
+        <p class="e-meta"><span>心情 ★★★★☆</span></p>
+        <p>窗外的绿意还带着露水，公道杯里的茶汤红得像宝石，先给自己一杯。</p>
+      </div>
+      <div class="snaps">
+        <figure class="polaroid sm r1"><img src="img/hand-pitcher.jpg" alt="手提公道杯" loading="lazy"><figcaption>窗外绿意</figcaption></figure>
+        <figure class="polaroid sm r2"><img src="img/topview.jpg" alt="钩织杯垫上的茶席与香炉" loading="lazy"><figcaption>点一炉香</figcaption></figure>
+      </div>
+    </div>
+    <div class="page page-r">
+      <span class="stamp">今日<br>心情</span>
+      <div class="entry">
+        <p class="e-head"><b>午后</b>把茶席搬到院子里</p>
+        <p class="e-meta"><span>心情 ★★★★★</span></p>
+        <p>阳光照进公道杯，茶汤金黄透亮。斟一杯到红色小杯里，什么都不想。</p>
+      </div>
+      <div class="snaps">
+        <figure class="polaroid sm r2"><img src="img/round-table.jpg" alt="阳光下的圆桌茶席" loading="lazy"><figcaption>院子里的阳光</figcaption></figure>
+        <figure class="polaroid sm r1"><img src="img/pour.jpg" alt="斟茶进红色小杯" loading="lazy"><figcaption>斟一杯</figcaption></figure>
+      </div>
+      <div class="entry">
+        <p class="e-head"><b>夜里</b>竹影下煮水</p>
+        <p class="e-meta"><span>和三位老朋友</span></p>
+        <p>灯一关，只剩炉火和竹影。壶里的水汽一阵阵升起来，大家聊到很晚。</p>
+      </div>
+      <div class="snaps">
+        <figure class="polaroid sm r1"><img src="img/steam-kettle.jpg" alt="冒着热气的提梁壶" loading="lazy"><figcaption>水汽如雾</figcaption></figure>
+        <figure class="polaroid sm r2"><img src="img/gourd.jpg" alt="竹枝下的葫芦" loading="lazy"><figcaption>新挂的小葫芦</figcaption></figure>
+      </div>
+      <p class="d-sign">—— 昕茗</p>
+    </div>
+  </div>
+</section>
+
+<!-- 我喜欢的 -->
+<section class="likes" id="likes">
+  <h2 class="title reveal"><small>叁</small>我喜欢的小美好</h2>
+  <div class="like-grid">
+    <figure class="like reveal"><img src="img/forest.jpg" alt="" loading="lazy"><figcaption><b>秋天</b>落叶铺满地，坐下来就不想走</figcaption></figure>
+    <figure class="like reveal"><img src="img/gourd.jpg" alt="" loading="lazy"><figcaption><b>竹影</b>光从竹叶缝里漏下来的样子</figcaption></figure>
+    <figure class="like reveal"><img src="img/topview.jpg" alt="" loading="lazy"><figcaption><b>手作</b>自己钩的杯垫，一针一线都是时间</figcaption></figure>
+    <figure class="like reveal"><img src="img/copper-scoop.jpg" alt="" loading="lazy"><figcaption><b>老物件</b>铜茶则、葫芦、一块捡来的石头</figcaption></figure>
+    <figure class="like reveal"><img src="img/steam-kettle.jpg" alt="" loading="lazy"><figcaption><b>水汽</b>水快开时，白雾往上飘</figcaption></figure>
+    <figure class="like reveal"><img src="img/round-table.jpg" alt="" loading="lazy"><figcaption><b>阳光</b>照进茶汤里，整杯都亮了</figcaption></figure>
+  </div>
+</section>
+
+<!-- 光影（水墨） -->
+<section class="ink" id="mountain">
+  <div class="ink-scene">
+    <div class="ml ml1" data-k=".04"></div>
+    <div class="ink-sun"></div>
+    <div class="ml ml2" data-k=".10"></div>
+    <div class="ml ml3" data-k=".18"></div>
+    <div class="ink-mist"></div>
+    <div class="ink-mist m2"></div>
+    <h2 class="ink-title reveal"><small>肆</small>光影集<span>云深不知处 · 茶香自有时</span></h2>
+  </div>
+  <div class="ink-strip four">
+    <img src="img/steam-kettle.jpg" alt="竹影下冒热气的提梁壶" loading="lazy">
+    <img src="img/gourd.jpg" alt="竹枝下的葫芦与红盖碗" loading="lazy">
+    <img src="img/kettle-stove.jpg" alt="陶壶在炭炉上" loading="lazy">
+    <img src="img/hand-pitcher.jpg" alt="手提公道杯" loading="lazy">
+    <img src="img/pour.jpg" alt="斟茶" loading="lazy">
+    <img src="img/rougui-cup.jpg" alt="手捧一盏深红茶汤" loading="lazy">
+    <img src="img/tea-table.jpg" alt="长长的茶席" loading="lazy">
+    <img src="img/gaiwan-red.jpg" alt="盖碗与红茶汤" loading="lazy">
+  </div>
+  <p class="ink-caption reveal">我拍的不是茶，是那一刻刚刚好的光。</p>
+</section>
+
+<!-- 茶（其次） -->
+<section class="tea-part" id="tea">
+  <h2 class="title reveal"><small>伍</small>顺便聊聊茶</h2>
+  <p class="note reveal">茶是我和你聊天的方式。跟着节气，我会泡不一样的茶。</p>
+  <div class="today reveal" id="today">
+    <span class="today-label">今日节气</span>
+    <span class="today-term" data-term-name>立冬</span>
+    <span class="today-tip" data-term-tip>宜煮老茶、围炉、慢慢聊。</span>
+  </div>
   <div class="wheel reveal" id="wheel" role="tablist" aria-label="二十四节气"></div>
   <article class="term-card reveal" id="term-card" aria-live="polite">
     <div class="term-photo"><img id="term-img" src="img/kettle-stove.jpg" alt=""></div>
@@ -89,179 +168,36 @@
       </dl>
     </div>
   </article>
-</section>
-
-<!-- 四季 -->
-<section class="seasons" id="seasons">
-  <h2 class="title reveal"><small>贰</small>四季茶事</h2>
-  <div class="season-grid">
-    <a class="card spring reveal" href="#calendar" data-jump="清明"><img src="img/maofeng-leaves.jpg" alt="黄山毛峰干茶" loading="lazy"><div><em>清明・谷雨</em><h3>黄山毛峰</h3><p>春芽初发，喝一口山里的新绿。</p></div></a>
-    <a class="card summer reveal" href="#calendar" data-jump="夏至"><img src="img/round-table.jpg" alt="阳光下圆桌上的茶具" loading="lazy"><div><em>夏至・大暑</em><h3>清饮一盏</h3><p>午后阳光正盛，一杯茶汤消暑气。</p></div></a>
-    <a class="card autumn reveal" href="#calendar" data-jump="白露"><img src="img/copper-scoop.jpg" alt="铜茶则上的炭焙乌龙" loading="lazy"><div><em>白露・霜降</em><h3>炭焙乌龙</h3><p>秋燥时节，焙火的暖香刚刚好。</p></div></a>
-    <a class="card winter reveal" href="#calendar" data-jump="立冬"><img src="img/kettle-stove.jpg" alt="陶壶在炭炉上煮茶" loading="lazy"><div><em>立冬・冬至</em><h3>围炉煮茶</h3><p>小壶慢煮，红汤暖身也暖心。</p></div></a>
-  </div>
-</section>
-
-<!-- 水墨山岚 -->
-<section class="ink" id="mountain">
-  <div class="ink-scene">
-    <div class="ml ml1" data-k=".04"></div>
-    <div class="ink-sun"></div>
-    <div class="ml ml2" data-k=".10"></div>
-    <div class="ml ml3" data-k=".18"></div>
-    <div class="ink-mist"></div>
-    <div class="ink-mist m2"></div>
-    <h2 class="ink-title reveal"><small>叁</small>山中一芽<span>云深不知处 · 茶香自有时</span></h2>
-  </div>
-  <div class="ink-band">
-    <img class="reveal" src="img/steam-kettle.jpg" alt="竹影下冒着热气的白陶提梁壶" loading="lazy">
-    <div class="reveal">
-      <h3>水汽如山岚</h3>
-      <p>壶里的水一滚，白雾就升起来，绕过竹叶，像山里的云。</p>
-      <p>好茶多半长在这样的雾里：太阳被挡成一层薄光，茶芽长得慢，香气就攒得足。泡开的那一刻，像把一整座山的清气倒进杯里。</p>
-      <a class="btn btn-ghost" href="#teas">看看这些茶</a>
-    </div>
-  </div>
-  <div class="ink-strip">
-    <img src="img/pour.jpg" alt="把茶汤斟进红色小杯" loading="lazy">
-    <img src="img/gourd.jpg" alt="竹枝下的葫芦与红盖碗" loading="lazy">
-    <img src="img/hand-pitcher.jpg" alt="手提公道杯，窗外一片绿" loading="lazy">
-  </div>
-</section>
-
-<!-- 茶单 -->
-<section class="teas" id="teas">
-  <h2 class="title reveal"><small>肆</small>我常泡的茶</h2>
-  <div class="tea-list">
-    <article class="tea reveal">
-      <img src="img/maofeng-leaves.jpg" alt="黄山毛峰干茶，芽头带白毫" loading="lazy">
-      <div>
-        <p class="tea-tag spring-c">绿茶 · 安徽黄山 · 春</p>
-        <h3>黄山毛峰</h3>
-        <p class="tea-poem">云雾养一芽，白毫似新雪。</p>
-        <p>黄山云雾多、日夜温差大，茶芽长得慢，香气也就攒得足。芽尖披着细白毫，汤色嫩绿清亮，有兰花般的清香。</p>
-        <p class="tip"><b>怎么泡</b> 玻璃杯或盖碗，水温约 80–85℃，看芽叶在杯里一根根立起来。</p>
-      </div>
-    </article>
-    <article class="tea reveal">
-      <img src="img/rougui-cup.jpg" alt="手捧一盏深红的岩茶汤" loading="lazy">
-      <div>
-        <p class="tea-tag autumn-c">乌龙 · 武夷岩茶 · 秋</p>
-        <h3>岩骨花香</h3>
-        <p class="tea-poem">山骨入汤，花气上眉。</p>
-        <p>焙火后叶底乌润，汤色深红透亮。先是焙火的暖，再慢慢回出花香与岩韵，配烤栗子刚刚好。</p>
-        <p class="tip"><b>怎么泡</b> 盖碗、沸水、快出汤，前几泡别闷，留给后面的回甘。</p>
-      </div>
-    </article>
-    <article class="tea reveal">
-      <img src="img/copper-scoop.jpg" alt="铜茶则上的球形炭焙乌龙" loading="lazy">
-      <div>
-        <p class="tea-tag autumn-c">乌龙 · 球形炭焙 · 秋冬</p>
-        <h3>炭焙乌龙</h3>
-        <p class="tea-poem">一粒卷着一段火候。</p>
-        <p>紧紧卷成小球的乌龙，经过炭火慢焙，香气沉稳带一点焦糖味。泡开一片片舒展，很耐泡。</p>
-        <p class="tip"><b>怎么泡</b> 沸水，第一泡稍润茶，之后每泡逐渐延长几秒。</p>
-      </div>
-    </article>
-    <article class="tea reveal">
-      <img src="img/liubao-leaves.jpg" alt="陈年六堡茶干茶" loading="lazy">
-      <div>
-        <p class="tea-tag winter-c">黑茶 · 广西梧州 · 冬</p>
-        <h3>陈年六堡茶</h3>
-        <p class="tea-poem">一年茶，三年药，七年宝。</p>
-        <p>越放越有味道的黑茶。陈放之后汤色红浓，带槟榔香与木香，冬天煮一壶，暖胃也暖心。</p>
-        <p class="tip"><b>怎么泡</b> 沸水快出汤；天冷时用小壶小火慢煮，滋味更醇。</p>
-      </div>
-    </article>
-    <article class="tea reveal">
-      <img src="img/gaiwan-red.jpg" alt="白瓷盖碗与红茶汤" loading="lazy">
-      <div>
-        <p class="tea-tag summer-c">红茶 · 四季皆宜</p>
-        <h3>一盏红茶</h3>
-        <p class="tea-poem">日色落杯中，暖意上心头。</p>
-        <p>红茶的汤色像午后的阳光，甜润好入口，第一次喝茶的朋友我最常泡给他。</p>
-        <p class="tip"><b>怎么泡</b> 盖碗或小壶，水温约 90℃，出汤别太慢，留住那一口甜。</p>
-      </div>
-    </article>
-    <article class="tea reveal">
-      <img src="img/kettle-stove.jpg" alt="陶壶在炭炉上煮茶，旁边一杯红汤" loading="lazy">
-      <div>
-        <p class="tea-tag winter-c">茶事 · 围炉煮茶</p>
-        <h3>围炉煮一壶</h3>
-        <p class="tea-poem">炉火正红，故人正好。</p>
-        <p>陶壶坐在炭炉上，小火慢慢煮老茶，屋里都是茶香。约三五好友，一坐就是一下午。</p>
-        <p class="tip"><b>想来</b> 提前跟我说一声，我把炉子先生好。</p>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- 茶事日记 -->
-<section class="moments" id="moments">
-  <h2 class="title reveal"><small>伍</small>昕茗的茶事日记</h2>
-  <p class="note reveal">每天泡了什么茶、遇到什么人，都记在这本小手帐里。</p>
-  <div class="book reveal">
-    <div class="page page-l">
-      <p class="d-date">立冬 · 晴 · 微风</p>
-      <h3 class="d-title">今天也泡了一壶好茶</h3>
-      <figure class="polaroid p1"><i class="tape"></i><img src="img/forest.jpg" alt="昕茗在白桦林里" loading="lazy"><figcaption>秋天的白桦林</figcaption></figure>
-      <div class="entry">
-        <p class="e-head"><b>清晨</b>开店前的第一泡</p>
-        <p class="e-meta"><span>茶：红茶</span><span>心情 ★★★★☆</span></p>
-        <p>窗外的绿意还带着露水，公道杯里的茶汤红得像宝石。</p>
-      </div>
-      <div class="snaps">
-        <figure class="polaroid sm r1"><img src="img/hand-pitcher.jpg" alt="手提公道杯" loading="lazy"><figcaption>窗外绿意</figcaption></figure>
-        <figure class="polaroid sm r2"><img src="img/topview.jpg" alt="盖碗与公道杯" loading="lazy"><figcaption>点一炉香</figcaption></figure>
-      </div>
-    </div>
-    <div class="page page-r">
-      <span class="stamp">今日<br>推荐</span>
-      <div class="entry">
-        <p class="e-head"><b>午后</b>阳光下的一席茶</p>
-        <p class="e-meta"><span>茶：乌龙</span><span>心情 ★★★★★</span></p>
-        <p>把茶席搬到院子里，阳光照进公道杯，茶汤金黄透亮。斟一杯到红色小杯里，刚刚好。</p>
-      </div>
-      <div class="snaps">
-        <figure class="polaroid sm r2"><img src="img/round-table.jpg" alt="阳光下的圆桌茶席" loading="lazy"><figcaption>院子里的茶席</figcaption></figure>
-        <figure class="polaroid sm r1"><img src="img/pour.jpg" alt="斟茶进红色小杯" loading="lazy"><figcaption>斟一杯</figcaption></figure>
-      </div>
-      <div class="entry">
-        <p class="e-head"><b>夜里</b>竹影下煮水</p>
-        <p class="e-meta"><span>茶：陈年六堡</span><span>人数：四位</span></p>
-        <p>灯一关，只剩炉火和竹影。壶里的水汽一阵阵升起来，像山里的雾。</p>
-      </div>
-      <div class="snaps">
-        <figure class="polaroid sm r1"><img src="img/steam-kettle.jpg" alt="冒着热气的提梁壶" loading="lazy"><figcaption>水汽如雾</figcaption></figure>
-        <figure class="polaroid sm r2"><img src="img/tea-table.jpg" alt="长长的茶席" loading="lazy"><figcaption>摆好茶席等人来</figcaption></figure>
-      </div>
-      <p class="d-sign">—— 昕茗</p>
-    </div>
+  <div class="mini-teas reveal">
+    <div><img src="img/maofeng-leaves.jpg" alt="" loading="lazy"><b>黄山毛峰</b><span>春天的新绿</span></div>
+    <div><img src="img/rougui-cup.jpg" alt="" loading="lazy"><b>武夷岩茶</b><span>秋天的焙火香</span></div>
+    <div><img src="img/copper-scoop.jpg" alt="" loading="lazy"><b>炭焙乌龙</b><span>一粒卷着火候</span></div>
+    <div><img src="img/liubao-leaves.jpg" alt="" loading="lazy"><b>陈年六堡</b><span>冬天煮一壶</span></div>
+    <div><img src="img/gaiwan-red.jpg" alt="" loading="lazy"><b>红茶</b><span>第一次喝茶也喜欢</span></div>
   </div>
   <div class="poem-band reveal">
     <div class="poem-card active"><p>寒夜客来茶当酒，竹炉汤沸火初红。</p><span>宋・杜耒〈寒夜〉</span></div>
     <div class="poem-card"><p>戏作小诗君勿笑，从来佳茗似佳人。</p><span>宋・苏轼</span></div>
     <div class="poem-card"><p>一碗喉吻润，两碗破孤闷。</p><span>唐・卢仝〈走笔谢孟谏议寄新茶〉</span></div>
     <div class="poem-card"><p>坐酌泠泠水，看煎瑟瑟尘。</p><span>唐・白居易〈山泉煎茶有怀〉</span></div>
-    <div class="poem-card"><p>茶者，南方之嘉木也。</p><span>唐・陆羽《茶经》</span></div>
   </div>
 </section>
 
-<!-- 约茶 -->
+<!-- 约我 -->
 <section class="visit" id="visit">
-  <h2 class="title reveal"><small>陆</small>约一席茶</h2>
+  <h2 class="title reveal"><small>陆</small>来找我喝茶</h2>
   <div class="visit-card reveal">
     <img class="visit-avatar" src="img/forest.jpg" alt="">
     <p class="visit-poem">有空来坐坐，<br>茶我泡，故事你带来。</p>
     <ul class="contact" id="contact"></ul>
-    <p class="contact-empty" id="contact-empty">想来喝杯茶，或想问问送礼怎么挑，欢迎私讯昕茗。</p>
+    <p class="contact-empty" id="contact-empty">想来喝杯茶、聊聊天，欢迎私讯昕茗。</p>
   </div>
 </section>
 
 <footer class="foot">
   <span class="seal">昕茗</span>
   <p>岁月藏在茶汤里，晚风落在竹檐下。</p>
-  <p class="small">© <span id="year"></span> 昕茗的节气茶历</p>
+  <p class="small">© <span id="year"></span> 昕茗</p>
 </footer>
 
 <audio id="bgm" src="audio/guzheng.mp3?v=2" loop preload="none"></audio>

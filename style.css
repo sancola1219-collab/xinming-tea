@@ -261,3 +261,51 @@ section { padding: clamp(56px, 8vw, 100px) clamp(16px, 6vw, 88px); }
   .page-r { padding-top: 10px; }
   .stamp { width: 70px; height: 70px; right: 16px; top: -10px; font-size: 14px; }
 }
+
+/* ===== 个人风格：首屏、喜欢、光影、茶（其次） ===== */
+.me-hero { padding: 0; display: grid; grid-template-columns: 1.05fr 1fr; min-height: calc(100vh - 60px); background: #efe6d6; }
+.me-photo { position: relative; overflow: hidden; }
+.me-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; animation: slowzoom 18s ease-in-out infinite alternate; }
+@keyframes slowzoom { to { transform: scale(1.06); } }
+.me-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 70%, #efe6d6); }
+.me-text { align-self: center; padding: 40px clamp(20px, 6vw, 90px); position: relative; }
+.me-name { font: 700 clamp(90px, 13vw, 170px)/1 var(--brush); margin: 0 0 18px; letter-spacing: .1em; color: #3a2a20; }
+.me-line { font: clamp(20px, 2.2vw, 26px)/1.7 var(--brush); color: var(--soft); margin: 0 0 22px; }
+.me-poem { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 14px; position: absolute; right: clamp(16px, 4vw, 60px); top: 50%; transform: translateY(-50%); margin: 0; }
+.me-poem span { writing-mode: vertical-rl; font: 20px/1.6 var(--brush); letter-spacing: .4em; color: #8a6f58; }
+.me-poem span:last-child { margin-top: 2em; }
+.me-tags { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.me-tags li { background: #fff; border-radius: 20px; padding: 4px 14px; font: 16px var(--brush); box-shadow: 0 4px 12px rgba(60, 40, 20, .08); }
+.about-photo img { border-radius: 20px; aspect-ratio: 3 / 4; object-position: 50% 20%; }
+.about { background: var(--bg); }
+.likes { background: #fbf8f2; }
+.like-grid { max-width: 1180px; margin: 30px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.like { margin: 0; position: relative; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
+.like img { width: 100%; height: 300px; object-fit: cover; transition: transform .8s; }
+.like:hover img { transform: scale(1.06); }
+.like figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 50px 18px 16px; color: #fff; background: linear-gradient(transparent, rgba(30, 22, 16, .75)); font: 16px/1.6 var(--brush); }
+.like figcaption b { display: block; font-size: 26px; letter-spacing: .2em; }
+.ink-strip.four { grid-template-columns: repeat(4, 1fr); }
+.ink-strip.four img { height: 260px; }
+.ink-caption { text-align: center; font: 22px var(--brush); color: #c9c3b6; margin: 0; padding: 40px 16px 56px; letter-spacing: .2em; }
+.tea-part { text-align: center; }
+.tea-part .today { text-align: left; }
+.mini-teas { max-width: 1000px; margin: 40px auto 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.mini-teas div { background: #fff; border-radius: 16px; padding: 10px 10px 14px; box-shadow: var(--shadow); }
+.mini-teas img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; margin-bottom: 8px; }
+.mini-teas b { display: block; font: 700 19px var(--brush); }
+.mini-teas span { font-size: 14px; color: var(--soft); }
+@media (max-width: 980px) { .like-grid { grid-template-columns: 1fr 1fr; } .mini-teas { grid-template-columns: repeat(3, 1fr); } .ink-strip.four { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 760px) {
+  .me-hero { grid-template-columns: 1fr; min-height: auto; }
+  .me-photo img { height: 62vh; }
+  .me-photo::after { background: linear-gradient(transparent 70%, #efe6d6); }
+  .me-text { text-align: center; padding: 10px 20px 50px; }
+  .me-poem { position: static; transform: none; justify-content: center; margin: 0 0 24px; }
+  .me-poem span:last-child { margin-top: 1.4em; }
+  .hero-cta { justify-content: center; }
+  .like-grid { grid-template-columns: 1fr; } .like img { height: 240px; }
+  .mini-teas { grid-template-columns: 1fr 1fr; }
+  .ink-strip.four img { height: 180px; }
+}
+.tea-part .term-card { text-align: left; }
