@@ -36,7 +36,6 @@ const TERMS = [
   ['小寒', 1, 5, '冬', '雁北乡，鹊始巢。', '陈年六堡茶', '最冷的时候，煮一壶红浓的老茶。'],
   ['大寒', 1, 20, '冬', '寒气之逆极。', '红茶', '一年的最后一个节气，暖暖的红茶送给自己。'],
 ];
-const SEASON_COLOR = { 春: '#7f9a6e', 夏: '#5f8f97', 秋: '#b9803f', 冬: '#6b6a86' };
 
 // 今天落在哪个节气
 function currentTerm(d = new Date()) {
@@ -46,52 +45,35 @@ function currentTerm(d = new Date()) {
   for (const t of sorted) if (t[1] * 100 + t[2] <= md) cur = t;
   return cur[0];
 }
-
-const wheel = document.getElementById('wheel');
-const card = document.getElementById('term-card');
 const $ = id => document.getElementById(id);
-const todayName = currentTerm();
+const card = $('term-card');
+const todayIdx = TERMS.findIndex(t => t[0] === currentTerm());
+let idx = todayIdx, toTW = null, trad = false;
+const tx = s => (trad && toTW ? toTW(s) : s);
 
-TERMS.forEach(t => {
-  const b = document.createElement('button');
-  b.type = 'button'; b.textContent = t[0]; b.dataset.term = t[0]; b.dataset.season = t[3];
-  b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', 'false');
-  if (t[0] === todayName) b.classList.add('today');
-  b.onclick = () => showTerm(t[0], true);
-  wheel.appendChild(b);
-});
-
-function showTerm(name, animate) {
-  const t = TERMS.find(x => x[0] === name);
+// 节气卡片：一次只看一个，可以前后翻
+function showTerm(i, animate) {
+  idx = (i + TERMS.length) % TERMS.length;
+  const t = TERMS[idx];
   const fill = () => {
-    $('term-name').textContent = t[0];
-    $('term-season').textContent = t[3];
-    $('term-season').style.background = SEASON_COLOR[t[3]];
-    $('term-date').textContent = `约 ${t[1]} 月 ${t[2]} 日`;
-    $('term-line').textContent = t[4];
-    $('term-tea').textContent = t[5];
-    $('term-say').textContent = t[6];
+    $('term-name').textContent = tx(t[0]);
+    $('term-date').textContent = tx(`${t[3]} · 约 ${t[1]} 月 ${t[2]} 日`);
+    $('term-line').textContent = tx(t[4]);
+    $('term-tea').textContent = tx(t[5]);
+    $('term-say').textContent = tx(t[6]);
     $('term-img').src = `img/${TERM_IMG[t[0]][0]}.jpg`;
     $('term-img').style.objectPosition = TERM_IMG[t[0]][1];
-    $('term-img').alt = `${t[3]}天的茶`;
+    $('term-img').alt = tx(`${t[0]}的茶`);
+    $('term-today').hidden = idx !== todayIdx;
+    $('term-now').hidden = idx === todayIdx;
     card.classList.remove('swap');
   };
-  wheel.querySelectorAll('button').forEach(b => b.setAttribute('aria-selected', b.dataset.term === name ? 'true' : 'false'));
-  const btn = wheel.querySelector(`[data-term="${name}"]`);
-  btn.scrollIntoView({ behavior: animate ? 'smooth' : 'auto', block: 'nearest', inline: 'center' });
-  if (animate) { card.classList.add('swap'); setTimeout(fill, 220); } else fill();
+  if (animate) { card.classList.add('swap'); setTimeout(fill, 240); } else fill();
 }
-
-// 首屏「今日节气」
-const td = TERMS.find(x => x[0] === todayName);
-document.querySelector('[data-term-name]').textContent = td[0];
-document.querySelector('[data-term-tip]').textContent = td[6];
-$('today').style.borderLeftColor = SEASON_COLOR[td[3]];
-showTerm(todayName, false);
-scrollTo(0, 0);
-
-// 四季卡片：点了跳到该季的节气
-document.querySelectorAll('[data-jump]').forEach(a => a.addEventListener('click', () => setTimeout(() => showTerm(a.dataset.jump, true), 500)));
+$('term-prev').onclick = () => showTerm(idx - 1, true);
+$('term-next').onclick = () => showTerm(idx + 1, true);
+$('term-now').onclick = () => showTerm(todayIdx, true);
+showTerm(todayIdx, false);
 
 // 进场动画
 const io = new IntersectionObserver(es => es.forEach(e => {
@@ -119,30 +101,28 @@ Object.entries(CONTACT).forEach(([k, v]) => {
 if (ul.children.length) $('contact-empty').style.display = 'none';
 $('year').textContent = new Date().getFullYear();
 
-// 繁／简切换（节气卡片的文字是动态填的，切换时一并转）
+// 繁／简切换（节气卡片的字是动态填的，切换后重填一次）
 const lbtn = $('lang');
-let toCN = null, simp = false, conv = null;
-const setLang = s => {
+let conv = null;
+const setLang = on => {
   if (!window.OpenCC) return;
-  if (!conv) { toCN = OpenCC.Converter({ from: 'cn', to: 'tw' }); conv = OpenCC.HTMLConverter(toCN, document.documentElement, 'zh-Hans', 'zh-Hant'); }
-  if (s) conv.convert(); else conv.restore();
-  simp = s;
-  lbtn.textContent = s ? '简' : '繁';
-  try { localStorage.setItem('xm-lang2', s ? 'tw' : 'cn'); } catch (e) {}
+  if (!conv) { toTW = OpenCC.Converter({ from: 'cn', to: 'tw' }); conv = OpenCC.HTMLConverter(toTW, document.documentElement, 'zh-Hans', 'zh-Hant'); }
+  if (on) conv.convert(); else conv.restore();
+  trad = on;
+  lbtn.textContent = on ? '简' : '繁';
+  showTerm(idx, false);
+  try { localStorage.setItem('xm-lang2', on ? 'tw' : 'cn'); } catch (e) {}
 };
-lbtn.onclick = () => { const sel = wheel.querySelector('[aria-selected="true"]').dataset.term; setLang(!simp); if (!simp) showTerm(sel, false); };
-// 简体模式下点节气，填完再转一次
-const _show = showTerm;
-showTerm = (n, a) => { _show(n, a); if (simp && toCN) setTimeout(() => card.querySelectorAll('h3,p,dd').forEach(e => { e.textContent = toCN(e.textContent); }), a ? 260 : 0); };
+lbtn.onclick = () => setLang(!trad);
 window.addEventListener('load', () => {
   let saved = null;
   try { saved = localStorage.getItem('xm-lang2'); } catch (e) {}
   if (saved === 'tw') setLang(true);
 });
 
-// 背景音乐：浏览器不允许自动有声播放，按「听琴」才开始；音量慢慢淡入
+// 背景音乐：一进站先试着播；被浏览器挡下来的话，第一次点或碰画面就开始
 const bgm = $('bgm'), mbtn = $('music');
-let fade;
+let fade, musicTouched = false;
 const ramp = (to, done) => {
   clearInterval(fade);
   let ticks = 0;  // iPhone 不能用程式调音量，最多跑 2 秒就收尾
@@ -159,34 +139,16 @@ const setMusic = on => {
   if (on) { bgm.volume = 0; bgm.play().then(() => ramp(.55)).catch(() => setMusic(false)); }
   else ramp(0, () => bgm.pause());
 };
-let musicTouched = false;   // 访客自己按过音乐钮之后，就不再自动开
 mbtn.onclick = e => { e.stopPropagation(); musicTouched = true; setMusic(bgm.paused || !mbtn.classList.contains('on')); };
+mbtn.addEventListener('pointerdown', () => { musicTouched = true; }, true);
 const autoStart = e => {
   if (e && e.target && e.target.closest && e.target.closest('.film-frame')) return;   // 点影片不开背景乐
   ['pointerdown', 'keydown', 'touchend'].forEach(ev => removeEventListener(ev, autoStart, true));
   if (!musicTouched && bgm.paused) setMusic(true);
 };
 ['pointerdown', 'keydown', 'touchend'].forEach(ev => addEventListener(ev, autoStart, true));
-mbtn.addEventListener('pointerdown', e => { musicTouched = true; }, true);
 bgm.volume = 0;
 bgm.play().then(() => { if (!musicTouched) { mbtn.classList.add('on'); mbtn.setAttribute('aria-pressed', true); mbtn.querySelector('.mtxt').textContent = '播放中'; ramp(.55); } }).catch(() => {});
-
-// 水墨山岚：往下卷时山一层层移动（视差）
-const inkLayers = [...document.querySelectorAll('.ml[data-k]')];
-const inkScene = document.querySelector('.ink-scene');
-let inkTick = false;
-const inkMove = () => {
-  const r = inkScene.getBoundingClientRect();
-  if (r.bottom > 0 && r.top < innerHeight) {
-    const y = (r.top + r.height / 2) - innerHeight / 2;  // 场景置中时为 0，上下卷动时各层位移不同
-    inkLayers.forEach(e => { e.style.transform = `translateY(${(y * e.dataset.k).toFixed(1)}px)`; });
-  }
-  inkTick = false;
-};
-if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  addEventListener('scroll', () => { if (!inkTick) { inkTick = true; requestAnimationFrame(inkMove); } }, { passive: true });
-  inkMove();
-}
 
 // 个人介绍影片：进站静音自动播；开了声音就把背景乐停掉，两个不会叠在一起
 const intro = $('intro'), fsound = $('film-sound');
