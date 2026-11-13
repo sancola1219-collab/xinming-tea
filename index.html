@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#121b18">
 <title>昕茗｜一盏茶，一段光阴</title>
 <meta name="description" content="我是昕茗，喜欢落叶、竹影、一炉香，和一杯慢慢泡开的茶。">
 <meta property="og:title" content="昕茗｜一盏茶，一段光阴">
@@ -12,12 +13,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Ma+Shan+Zheng&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="style.css?v=20">
+<link rel="stylesheet" href="style.css?v=30">
 </head>
 <body>
 
 <header class="nav">
-  <a class="brand" href="#top"><span class="seal">昕茗</span></a>
+  <a class="brand" href="#top">昕茗</a>
   <nav>
     <a href="#film">影片</a>
     <a href="#about">关于</a>
@@ -32,27 +33,25 @@
 
 <!-- 首屏 -->
 <section class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div class="hero-text">
-      <p class="label">Hi，我是</p>
-      <div class="hero-cols">
-        <div class="name-col"><h1>昕茗</h1><span class="seal">茶人</span></div>
-        <p class="hero-poem"><span>岁月藏在茶汤里</span><span>晚风落在竹檐下</span></p>
-      </div>
-      <p class="hero-line">喜欢落叶、竹影、一炉香，<br>和一杯慢慢泡开的茶。</p>
-      <p class="links"><a href="#film">看影片</a><a href="#visit">约我喝茶</a></p>
-    </div>
-    <figure class="hero-photo">
-      <img src="img/forest.jpg" alt="昕茗坐在秋天的白桦林里，托着腮微笑">
-      <figcaption>秋日 · 白桦林</figcaption>
-    </figure>
+  <div class="hero-photo"><img src="img/forest.jpg" alt="昕茗坐在秋天的白桦林里，托着腮微笑"></div>
+  <div class="hero-text">
+    <p class="eyebrow">Hi，我是</p>
+    <h1>昕茗</h1>
+    <p class="hero-line">喜欢落叶、竹影、一炉香，<br>和一杯慢慢泡开的茶。</p>
+    <p class="cta"><a class="btn solid" href="#film">▶ 看影片</a><a class="btn" href="#visit">约我喝茶</a></p>
   </div>
+  <span class="scroll-hint">往下慢慢看</span>
 </section>
+
+<div class="marquee" aria-hidden="true"><div>
+  <span>岁月藏在茶汤里</span><span>晚风落在竹檐下</span><span>一盏茶，一段光阴</span><span>茶我来泡，故事你带来</span>
+  <span>岁月藏在茶汤里</span><span>晚风落在竹檐下</span><span>一盏茶，一段光阴</span><span>茶我来泡，故事你带来</span>
+</div></div>
 
 <!-- 影片 -->
 <section class="film" id="film">
   <div class="wrap">
-    <p class="label center"><i>一分钟</i>认识我</p>
+    <header class="head"><b>01</b><div><p class="eyebrow">一分钟</p><h2>先认识我</h2></div></header>
     <div class="film-frame reveal">
       <video id="intro" src="video/xinming-intro-web.mp4" poster="video/poster.jpg" controls playsinline muted autoplay preload="metadata"></video>
       <button class="film-sound" id="film-sound" type="button">点一下，开声音</button>
@@ -65,11 +64,10 @@
   <div class="wrap about-grid">
     <figure class="reveal"><img src="img/portrait.jpg" alt="昕茗手捧红色茶盏的水彩画像" loading="lazy"></figure>
     <div class="reveal">
-      <p class="label"><i>壹</i>关于我</p>
-      <h2>慢一点，也没关系</h2>
+      <header class="head"><b>02</b><div><p class="eyebrow">关于我</p><h2>慢一点，也没关系</h2></div></header>
       <p>我是昕茗。喜欢秋天踩在落叶上的声音，喜欢午后的阳光斜斜地照进茶汤里，也喜欢收集一些旧旧的、有温度的小东西。</p>
       <p>开一间小小的茶舍，不是为了卖多少茶，是想要有一个地方，可以让来的人坐下来、喘口气。茶我来泡，你只要带着故事来就好。</p>
-      <p class="tags">落叶控 · 竹影收集者 · 钩织杯垫 · 爱拍光影 · 每天三泡茶</p>
+      <ul class="tags"><li>落叶控</li><li>竹影收集者</li><li>钩织杯垫</li><li>爱拍光影</li><li>每天三泡茶</li></ul>
     </div>
   </div>
 </section>
@@ -77,21 +75,13 @@
 <!-- 日常 -->
 <section class="daily" id="daily">
   <div class="wrap">
-    <p class="label center"><i>贰</i>日常</p>
-    <h2 class="center">今天也好好生活了</h2>
-    <div class="row reveal">
-      <img src="img/hand-pitcher.jpg" alt="手提公道杯，窗外一片绿意" loading="lazy">
-      <div><p class="when">清晨</p><h3>开店前的第一泡</h3><p>窗外的绿意还带着露水，公道杯里的茶汤红得像宝石，先给自己一杯。</p></div>
+    <header class="head"><b>03</b><div><p class="eyebrow">日常</p><h2>今天也好好生活了</h2></div></header>
+    <div class="days">
+      <article class="day reveal"><img src="img/hand-pitcher.jpg" alt="手提公道杯，窗外一片绿意" loading="lazy" style="object-position:62% 50%"><div><p class="when">清晨</p><h3>开店前的第一泡</h3><p>窗外的绿意还带着露水，公道杯里的茶汤红得像宝石，先给自己一杯。</p></div></article>
+      <article class="day reveal"><img src="img/round-table.jpg" alt="阳光下的圆桌茶席" loading="lazy"><div><p class="when">午后</p><h3>把茶席搬到院子里</h3><p>阳光照进公道杯，茶汤金黄透亮。斟一杯到红色小杯里，什么都不想。</p></div></article>
+      <article class="day reveal"><img src="img/steam-kettle.jpg" alt="竹影下冒着热气的提梁壶" loading="lazy"><div><p class="when">夜里</p><h3>竹影下煮水</h3><p>灯一关，只剩炉火和竹影。壶里的水汽一阵阵升起来，大家聊到很晚。</p></div></article>
     </div>
-    <div class="row flip reveal">
-      <img src="img/round-table.jpg" alt="阳光下的圆桌茶席" loading="lazy">
-      <div><p class="when">午后</p><h3>把茶席搬到院子里</h3><p>阳光照进公道杯，茶汤金黄透亮。斟一杯到红色小杯里，什么都不想。</p></div>
-    </div>
-    <div class="row reveal">
-      <img src="img/steam-kettle.jpg" alt="竹影下冒着热气的提梁壶" loading="lazy" style="object-position:50% 60%">
-      <div><p class="when">夜里</p><h3>竹影下煮水</h3><p>灯一关，只剩炉火和竹影。壶里的水汽一阵阵升起来，大家聊到很晚。</p></div>
-    </div>
-    <div class="minis reveal">
+    <div class="cups reveal">
       <figure><img src="img/osmanthus.jpg" alt="" loading="lazy"><figcaption>桂花</figcaption></figure>
       <figure><img src="img/gourd.jpg" alt="" loading="lazy"><figcaption>竹影</figcaption></figure>
       <figure><img src="img/incense-table.jpg" alt="" loading="lazy"><figcaption>手作</figcaption></figure>
@@ -104,25 +94,28 @@
 
 <!-- 光影 -->
 <section class="light" id="light">
-  <img class="bleed" src="img/tea-table.jpg" alt="长长的茶席" loading="lazy">
   <div class="wrap">
-    <p class="label center"><i>叁</i>光影</p>
-    <p class="quote reveal">我拍的不是茶，<br>是那一刻刚刚好的光。</p>
-    <div class="trio reveal">
-      <img src="img/sky-pitcher.jpg" alt="举起公道杯，茶汤里倒映着蓝天" loading="lazy">
-      <img src="img/vase.jpg" alt="红釉瓶里插着一枝桂花" loading="lazy">
-      <img src="img/pine-saucer.jpg" alt="松针纹杯托上的一盏茶" loading="lazy">
-    </div>
+    <header class="head"><b>04</b><div><p class="eyebrow">光影</p><h2>我拍的不是茶，<br>是那一刻刚刚好的光</h2></div></header>
   </div>
+  <div class="reel" tabindex="0" aria-label="照片，可以左右滑">
+    <img src="img/sky-pitcher.jpg" alt="举起公道杯，茶汤里倒映着蓝天" loading="lazy">
+    <img src="img/tea-table.jpg" alt="长长的茶席" loading="lazy">
+    <img src="img/vase.jpg" alt="红釉瓶里插着一枝桂花" loading="lazy">
+    <img src="img/pine-saucer.jpg" alt="松针纹杯托上的一盏茶" loading="lazy">
+    <img src="img/pour.jpg" alt="斟茶进红色小杯" loading="lazy">
+    <img src="img/tea-ball.jpg" alt="小金碗里的一颗龙珠茶" loading="lazy">
+    <img src="img/rougui-cup.jpg" alt="手捧一盏深红茶汤" loading="lazy">
+    <img src="img/gaiwan-red.jpg" alt="盖碗与红茶汤" loading="lazy">
+  </div>
+  <p class="reel-hint">← 左右滑着看 →</p>
 </section>
 
 <!-- 茶 -->
 <section class="tea" id="tea">
   <div class="wrap">
-    <p class="label center"><i>肆</i>顺便聊聊茶</p>
-    <h2 class="center">跟着节气，换一杯茶</h2>
+    <header class="head"><b>05</b><div><p class="eyebrow">顺便聊聊茶</p><h2>跟着节气，换一杯茶</h2></div></header>
     <article class="term reveal" id="term-card" aria-live="polite">
-      <img id="term-img" src="img/kettle-stove.jpg" alt="">
+      <div class="term-cup"><img id="term-img" src="img/kettle-stove.jpg" alt=""></div>
       <div class="term-body">
         <p class="term-today" id="term-today">今日节气</p>
         <h3 id="term-name">立冬</h3>
@@ -153,16 +146,18 @@
 
 <!-- 约我 -->
 <section class="visit" id="visit">
-  <div class="wrap center">
-    <p class="label center"><i>伍</i>来找我喝茶</p>
-    <p class="visit-poem reveal">有空来坐坐，<br>茶我泡，故事你带来。</p>
-    <ul class="contact" id="contact"></ul>
-    <p class="contact-empty" id="contact-empty">想来喝杯茶、聊聊天，欢迎私讯昕茗。</p>
+  <div class="wrap">
+    <div class="invite reveal">
+      <p class="eyebrow">来找我喝茶</p>
+      <p class="visit-poem">有空来坐坐，<br>茶我泡，故事你带来。</p>
+      <ul class="contact" id="contact"></ul>
+      <p class="contact-empty" id="contact-empty">想来喝杯茶、聊聊天，欢迎私讯昕茗。</p>
+    </div>
   </div>
 </section>
 
 <footer class="foot">
-  <span class="seal">昕茗</span>
+  <span class="brand">昕茗</span>
   <p>岁月藏在茶汤里，晚风落在竹檐下。</p>
   <p class="small">© <span id="year"></span> 昕茗</p>
 </footer>
@@ -181,6 +176,6 @@ const CONTACT = {
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.js" defer></script>
-<script src="main.js?v=20" defer></script>
+<script src="main.js?v=30" defer></script>
 </body>
 </html>
