@@ -111,6 +111,7 @@ const setLang = on => {
   trad = on;
   lbtn.textContent = on ? '简' : '繁';
   showTerm(idx, false);
+  if (window.playRefresh) playRefresh();
   try { localStorage.setItem('xm-lang2', on ? 'tw' : 'cn'); } catch (e) {}
 };
 lbtn.onclick = () => setLang(!trad);
